@@ -1,0 +1,9 @@
+flask==2.3.3
+flask-smorest==0.39.0
+python-dotenv==1.0.0
+sqlalchemy==2.0.19
+flask-sqlalchemy==3.0.3
+marshmallow==3.21.0
+flask-jwt-extended==4.4.4
+passlib==1.7.4
+flask-migrate==4.0.4
