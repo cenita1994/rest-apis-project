@@ -1,14 +1,11 @@
 FROM python:3.11-slim
 
-# Expose port
-EXPOSE 5000
-
 # Set working directory
 WORKDIR /app
 
 # Copy and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy the app code
 COPY . .
@@ -18,4 +15,4 @@ ENV FLASK_APP=app:create_app
 ENV FLASK_ENV=development
 
 # Run Flask app
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["gnunicorn","--bind","0.0.0.0:80","app:create_app()"]
